@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  namespace: f-absoatov
+  labels:
+    project: practice
+    author: f-absoatov
+    run: nginx-absoatov
+spec:
+  containers:
+    - name: nginx-absoatov
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx2
+  namespace: f-absoatov
+  labels:
+    project: practice
+    author: f-absoatov
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+  restartPolicy: Always
